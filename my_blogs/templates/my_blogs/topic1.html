@@ -1,0 +1,17 @@
+{% extends "my_blogs/base.html" %}
+
+{% block content %}
+  <p>Study:{{ topic1 }}</p>
+  <p>Content:</p>
+  <ul>
+  {% for entry1 in entries1 %}
+    <li>
+      <p>{{ entry1.date_added|date:'M d, Y H:i' }}</p>
+      <p>{{ entry1.text|linebreaks }}</p>
+    </li>
+  {% empty %}
+    <li>No article have been added yet.</li>
+  {% endfor %}
+  </ul>
+
+{% endblock content %}
